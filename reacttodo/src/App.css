@@ -3,9 +3,18 @@
 }
 /*App-logo-translate*/
 .App-logo {
-  animation: logo-animation infinite 2.5s ease;
+  animation: logo-animation infinite 2s ease-in;
   height: 50px;
   padding-left: 30px;
+}
+
+.BackgroundImage{
+  position: absolute;
+  /* background: url(./background.png); */
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  
 }
 
 .App-header {
@@ -28,18 +37,6 @@
   font-size: large;
 }
 
-@keyframes App-logo-translate {
-  0%{
-    transform: rotate(-20deg)
-  }
-  50%{
-    transform: rotate(20deg)
-  }
-  100%{
-    transform: rotate(-20deg)
-  }
-}
-
 @keyframes logo-animation{
   0%{
     transform:translateX(-150px)
@@ -48,7 +45,7 @@
     transform: translateX(0px)
   }
   34%{
-    transform: rotate(0deg)
+    transform: rotate(5deg)
   }
 
   66%{
@@ -67,6 +64,7 @@
   height: 300px;
   border-radius: 30px;
   position: absolute;
+  background-color: white;
 }
 
 #OutputBox{
@@ -149,6 +147,7 @@
   position: absolute;
   padding: 5px;
   box-shadow: 5px 5px 10px grey;
+  background: white;
 }
 
 .TextField{
@@ -195,7 +194,15 @@
 
 .CategoryDesign{
   position: absolute;
+  border: 0.5px solid black;
+  border-radius: 50px;
   width: 30px;
   height: 30px;
   margin: 190px 250px;
+}
+
+.wrapper {
+  display: grid; 
+  grid-template-rows:350px,350px,350px,350px,; 
+  grid-template-columns:25% 25% 25% 25%;     
 }

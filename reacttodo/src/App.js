@@ -4,10 +4,10 @@ import Add from './Add.png';
 import remove from './remove.png';
 import edit from './edit.png';
 import './App.css';
-// import { stat } from 'fs';
  
-const stag = `blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah `
+const stag = `Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text 
+Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text 
+Text Text Text Text Text Text Text `
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App App-title">ToDo List</h1>
         </header>
-        <div className="Selection">
+        <div className="Selection BackgroundImage">
           <div id="InputBox">
             <input type="text" id="TaskInput" className="FieldInput" placeholder="Task"></input>
             <input type="datetime-local" id="DateInput" className="FieldInput"></input>
@@ -40,37 +40,35 @@ class App extends Component {
             </div>
           </div>
           <div id="OutputBox">
-            <div id="1" className="ToDoItem">
-              <label id="OutputText" className="FontStyle TextField">{textFormat(stag)}</label>
-              <label id="OutputDate" className="DateStyle">28.07.2018 - 18:00 Uhr</label>
-              <label style={{'background-color': 'rgb(48, 142, 219)'}} className="CategoryDesign"></label>
-              <div id="DelButton" className="card" onClick={() => console.log('works!')}>
-                <img src={remove} className="ButtonImageDel" alt="Failed" ></img>
+              <div className="wrapper">
+                <div><CreateToDoElement/></div>
+                <div><CreateToDoElement/></div>
+                <div><CreateToDoElement/></div>
               </div>
-              <div id="EditButton" className="card MargTop" onClick={() => console.log('works!')}>
-                <img src={edit} className="ButtonImageDel" alt="Failed" ></img>
-              </div>
-              
-            </div>
           </div>
         </div>
-        <div className="Selection">
-        </div>
+        
       </div>
     );
   }
 }
 
-// function BackgroundColorDefinition(arbeit,schule,privat){
-//   if(arbeit=== true)
-//     return rgb(248, 43, 43)
-//   else if (schule === true)  
-//     return rgb(1, 160, 1)
-//   else if(privat === true)
-//     return rgb(48, 142, 219)
-//   else
-//     return white
-// }
+class CreateToDoElement extends Component{
+  render(){
+    return(
+      <div className="ToDoItem">
+        <label id="OutputText" className="FontStyle TextField">{textFormat(stag)}</label>
+        <label id="OutputDate" className="DateStyle">28.07.2018 - 18:00 Uhr</label>
+        <label style={{'background-color': 'rgb(48, 142, 219)'}} className="CategoryDesign"></label>
+        <div id="DelButton" className="card" onClick={() => console.log('works!')}>
+          <img src={remove} className="ButtonImageDel" alt="Failed" ></img>
+        </div>
+        <div id="EditButton" className="card MargTop" onClick={() => console.log('works!')}>
+          <img src={edit} className="ButtonImageDel" alt="Failed" ></img>
+        </div>
+      </div> 
+  )}      
+}
 
 function textFormat(value){
   const splitted  = value.split(' ')
